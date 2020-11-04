@@ -1,0 +1,250 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.profile {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-image: url("../assets/Asset\ 7.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  margin: 0 15px;
+}
+
+.sidenav {
+  .img-container {
+    height: 125px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  ul {
+    padding-left: 0;
+    li {
+      display: flex !important;
+      justify-content: flex-start;
+      align-items: center;
+      list-style: none;
+      display: block;
+      padding: 15px;
+      color: whitesmoke;
+      border-bottom: 1px solid lightgrey;
+      cursor: pointer;
+      mat-icon {
+        margin: 0 10px;
+      }
+    }
+    li:hover {
+      background-color: #56707d;
+    }
+  }
+}
+
+.active {
+  background-color: #56707d;
+  color: whitesmoke;
+}
+
+mat-drawer {
+  width: 300px;
+  background-color: #607d8b;
+}
+
+mat-toolbar {
+  background-color: #009688;
+  color: white;
+}
+
+.action-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  color: #757575;
+  border-bottom: 1px solid lightgrey;
+  mat-icon {
+    margin: 0 15px;
+  }
+}
+
+.activity-container {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid lightgrey;
+  padding: 20px;
+  .heading {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .activities {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .activity {
+      background-color: white;
+      border: 1px solid #e6e6e6;
+      box-shadow: 0 0 3px #e6e6e6;
+      padding: 15px;
+      width: 23%;
+      .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        .title {
+          color: #757575;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .value {
+          font-size: 26px;
+        }
+      }
+      .content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        mat-icon {
+          color: #8cc63f;
+        }
+        .status {
+          color: #cacaca;
+        }
+      }
+    }
+  }
+}
+
+.cards-wrapper {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: white;
+  .tasks,
+  .top-variants,
+  .products,
+  .stocks {
+    width: 49%;
+    margin: 2% 0;
+    height: 275px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 0 3px #e6e6e6;
+    padding: 15px;
+    .heading {
+      padding: 15px;
+      font-size: 24px;
+      font-weight: 500;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    .content {
+      padding: 15px;
+    }
+  }
+
+  .tasks {
+    .content {
+      mat-expansion-panel {
+        margin: 10px 0;
+        background-color: #f2f2f2;
+        .title {
+          color: #f19877;
+          font-weight: bold;
+        }
+        .value {
+          font-weight: 500;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+
+  .top-variants {
+    .variants {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      .variant {
+        width: 50%;
+        padding: 25px;
+        padding-left: 0;
+        .first-name {
+          font-size: 16px;
+        }
+        .last-name {
+          font-size: 26px;
+          font-weight: 500;
+        }
+        .value {
+          font-size: 26px;
+          font-weight: 500;
+          color: #4fbae7;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  .products {
+    .pdt-details {
+      position: relative;
+      background-color: white;
+      .product-name {
+        position: absolute;
+        bottom: 0;
+        width: 100px;
+        text-align: center;
+        background-image: linear-gradient(transparent, black);
+        color: white;
+      }
+    }
+  }
+
+  .stocks {
+  }
+}
+
+#carouselExampleIndicators {
+  width: 90%;
+  margin: 25px auto;
+}
+
+.carousel-indicators {
+  margin: -35px 0;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  color: gray;
+}
+
+.carousel-control-prev {
+  margin-left: -30px;
+  .carousel-control-prev-icon {
+    background-color: gray;
+    border-radius: 50%;
+  }
+}
+
+.carousel-control-next {
+  margin-right: -30px;
+  .carousel-control-next-icon {
+    background-color: gray;
+    border-radius: 50%;
+  }
+}
+
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+}

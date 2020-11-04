@@ -1,0 +1,147 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <div class="sidenav">
+      <div class="img-container">
+        <img src="../assets/QY7WSh.tif.png" alt="">
+      </div>
+      <ul>
+        <li *ngFor="let nav of navs" [routerLink]="[nav.path]" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <mat-icon>{{nav.icon}}</mat-icon>
+          <span>{{nav.name}}</span>
+        </li>
+      </ul>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <span>Dashboard</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon matBadge="3" matBadgeColor="warn">notifications</mat-icon>
+        </button>
+        <div class="profile">
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="action-container">
+      <mat-icon>share</mat-icon>
+      <mat-icon>print</mat-icon>
+      <mat-icon>save_alt</mat-icon>
+    </div>
+    <div class="activity-container">
+      <h3 class="heading">Sales Activity (95)</h3>
+      <div class="activities">
+        <div class="activity" *ngFor="let activity of activities">
+          <div class="heading">
+            <div class="title">
+              <mat-icon>done</mat-icon>
+              <span>{{activity.title}}</span>
+            </div>
+            <span class="value">{{activity.value }}</span>
+          </div>
+          <div class="content">
+            <mat-icon>north</mat-icon>
+            <span class="status">{{activity.status}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cards-wrapper">
+      <mat-card class="tasks p-0">
+        <div class="heading">Task</div>
+        <div class="content">
+          <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span class="title" style="color: #f19877;">High</span>
+                  <span class="value">(30)</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span class="title" style="color: #f19877;">Medium</span>
+                  <span class="value">(20)</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span class="title" style="color: #f19877;">Low</span>
+                  <span class="value">(15)</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </mat-card>
+      <mat-card class="top-variants p-0">
+        <div class="heading">Top Selling Variants</div>
+        <div class="content">
+          <div class="variants">
+            <div class="variant" *ngFor="let variant of variants">
+              <div class="first-name">{{variant.firstName}}</div>
+              <div>
+                <span class="last-name">{{variant.lastName}}</span>
+                <span class="value">{{variant.value}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="products p-0">
+        <div class="heading">Products</div>
+        <div class="content">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col pdt-details" *ngFor="let pdt of products">
+                    <img class="d-block" height="100" width="100" [src]="pdt.img" [alt]="pdt.name">
+                    <div class="product-name">{{ pdt.name }}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col pdt-details" *ngFor="let pdt of products">
+                    <img class="d-block" height="100" width="100" [src]="pdt.img" [alt]="pdt.name">
+                    <div class="product-name">{{ pdt.name }}</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </mat-card>
+      <mat-card class="stocks p-0">
+        <div class="heading">Stock Details</div>
+        <div class="content">
+          <div [chart]="pieChart"></div>
+        </div>
+      </mat-card>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
